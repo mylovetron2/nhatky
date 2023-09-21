@@ -1,0 +1,13 @@
+
+CREATE view view_nhatky_iso as
+SELECT 
+ngaynk,
+CONVERT(CAST(CONVERT(hoten USING LATIN1) AS BINARY) USING UTF8) as hoten,
+CONVERT(CAST(CONVERT(noidungcv2 USING LATIN1) AS BINARY) USING UTF8) as noidungcv2,
+CONVERT(CAST(CONVERT(noidungcv1 USING LATIN1) AS BINARY) USING UTF8) as noidungcv1
+FROM nhatky_iso
+
+----------------------------------------------------
+REATE view view_users as
+SELECT username,CONVERT(CAST(CONVERT(hoten USING LATIN1) AS BINARY) USING UTF8) as hoten FROM users WHERE hoten!=''
+----------------------------
